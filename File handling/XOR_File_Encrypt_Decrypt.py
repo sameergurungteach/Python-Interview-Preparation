@@ -14,4 +14,6 @@ with open("encrypted.bin","wb") as f:
 #DECRYPTED PROCESS
 with open("encrypted.bin","rb") as f:
     encrypted_value = f.read()
-print(encrypted_value)
+# print(encrypted_value)
+decrypted_value = bytes(b ^ KEY for b in encrypted_value)
+print(decrypted_value.decode())
